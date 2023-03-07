@@ -1,0 +1,125 @@
+#N canvas -114 48 1366 685 12;
+#X obj 133 585 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj -273 141 tabwrite~ array1;
+#X obj -273 76 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj -479 143 threshold~ 1 3000 0.1 1000;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array array1 100 float 3;
+#A 0 -0.00106815 0 0.00106815 0.0019837 0.00244148 0.00244148 0.0019837
+0.000915555 -0.000457778 -0.00183111 -0.00335704 -0.00381481 -0.00396741
+-0.00350963 -0.00244148 -0.000915555 0.00061037 0.0019837 0.00289926
+0.00335704 0.00305185 0.00228889 0.00106815 -0.000152593 -0.00137333
+-0.00244148 -0.00289926 -0.00366222 -0.00350963 -0.00320444 -0.00259407
+-0.00167852 -0.000457778 0.000915555 0.00228889 0.00289926 0.00320444
+0.00289926 0.0019837 0.000762963 -0.00061037 -0.0019837 -0.00289926
+-0.00366222 -0.00366222 -0.00320444 -0.00228889 -0.00106815 0.000305185
+0.00137333 0.0019837 0.0021363 0.00228889 0.0021363 0.00183111 0.00137333
+0.000915555 0.000305185 -0.000305185 -0.00106815 -0.00167852 -0.00183111
+-0.0019837 -0.00152593 -0.000762963 0.000305185 0.00137333 0.00244148
+0.00305185 0.00320444 0.00305185 0.0019837 0.00061037 -0.000762963
+-0.00183111 -0.00244148 -0.00244148 -0.00167852 -0.00061037 0.000305185
+0.00122074 0.00167852 0.00183111 0.00183111 0.0019837 0.00183111 0.00183111
+0.00183111 0.00137333 0.000457778 -0.00061037 -0.00152593 -0.00228889
+-0.00274667 -0.00244148 -0.00152593 -0.000152593 0.00122074 0.00259407
+0.00350963;
+#X coords 0 1 99 -1 200 140 1;
+#X restore -150 61 graph;
+#X obj -273 103 metro 160;
+#X text -234 118 comment;
+#X obj 100 100 cnv 15 100 60 empty empty empty 20 12 0 14 #bcbcbc #404040
+0;
+#N canvas 0 22 455 304 gemwin 0;
+#X obj 132 182 gemwin;
+#X obj 67 89 outlet;
+#X obj 67 10 inlet;
+#X obj 67 41 route create;
+#X msg 67 70 set destroy;
+#X msg 142 68 set create;
+#X msg 198 112 destroy;
+#X msg 132 112 create \, 1;
+#X obj 294 56 gemhead;
+#X obj 294 76 world_light;
+#X msg 207 155 lighting 1;
+#X obj 207 134 loadbang;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 7 0;
+#X connect 3 1 5 0;
+#X connect 3 1 6 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 9 0;
+#X connect 10 0 0 0;
+#X connect 11 0 10 0;
+#X restore 115 139 pd gemwin;
+#X msg 117 112 destroy;
+#X text 111 99 Create window:;
+#X obj 348 553 random 100;
+#X obj 239 552 random 100;
+#X obj 130 557 random 100;
+#X obj 448 528 metro 1600;
+#X obj 239 525 metro 1600;
+#X obj 348 526 metro 1600;
+#X obj 557 555 random 100;
+#X obj 657 561 random 100;
+#X obj 765 557 random 100;
+#X obj 448 555 random 100;
+#X obj 657 534 metro 1600;
+#X obj -317 99 *~ 5;
+#X obj 557 528 metro 800;
+#X obj 765 530 metro 1600;
+#X obj -419 19 fiddle~;
+#X obj -419 66 moses 60;
+#X floatatom -419 45 5 0 0 0 - - - 0;
+#X obj -419 86 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj -374 86 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text -241 16 "Bézier Surface¨ \, 2016 Miguel Oliveros ©.;
+#X obj 130 525 metro 160;
+#X obj 130 611 osc~ 144000;
+#X obj -288 344 dac~ 1 2 3 4;
+#X obj 438 70 bang;
+#X obj 469 28 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj -318 1 adc~ 1 2 3 4 5;
+#X connect 0 0 32 0;
+#X connect 2 0 5 0;
+#X connect 3 0 14 0;
+#X connect 3 0 15 0;
+#X connect 3 0 16 0;
+#X connect 3 0 21 0;
+#X connect 3 0 23 0;
+#X connect 3 0 24 0;
+#X connect 3 0 31 0;
+#X connect 5 0 1 0;
+#X connect 8 0 9 0;
+#X connect 9 0 8 0;
+#X connect 13 0 0 0;
+#X connect 14 0 20 0;
+#X connect 15 0 12 0;
+#X connect 16 0 11 0;
+#X connect 21 0 18 0;
+#X connect 22 0 3 0;
+#X connect 22 0 1 0;
+#X connect 23 0 17 0;
+#X connect 24 0 19 0;
+#X connect 25 0 27 0;
+#X connect 26 0 28 0;
+#X connect 26 1 29 0;
+#X connect 27 0 26 0;
+#X connect 31 0 13 0;
+#X connect 32 0 33 0;
+#X connect 32 0 33 1;
+#X connect 34 0 31 0;
+#X connect 35 0 34 0;
+#X connect 36 0 22 0;
+#X connect 36 0 25 0;
+#X connect 36 0 33 0;
+#X connect 36 1 33 1;
+#X connect 36 2 33 2;
+#X connect 36 3 33 3;

@@ -1,0 +1,71 @@
+#N canvas 257 9 909 685 12;
+#X obj -440 504 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj -112 126 tabwrite~ array1;
+#X obj -112 61 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj -171 171 threshold~ 1 3000 0.1 1000;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array array1 100 float 3;
+#A 0 0 0.000152593 0 0 0 0 0 0 0 -0.000152593 0 0 0 0 -0.000152593
+0 0 0 0 0 0 0 0 0 0 -0.000152593 0 0 0 0 0 0.000152593 -0.000152593
+0 0 0.000152593 0 0 0 0 0 0 0 0 0 0.000152593 0 0 -0.000152593 0 0
+0 0 -0.000152593 0 0 0 0 0 0 0 0 -0.000152593 0 0 -0.000152593 0 0
+0 0 0 -0.000152593 0 -0.000152593 0 0.000152593 -0.000152593 0 0 0
+0.000152593 0 0 -0.000152593 0 0.000152593 0 0 0.000152593 -0.000152593
+0 0 0 0 0 -0.000152593 0 0 0.000152593 0;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 25 72 graph;
+#X obj -112 88 metro 160;
+#X text -73 103 comment;
+#X obj -368 472 random 100;
+#X obj -477 477 random 100;
+#X obj -368 445 metro 1600;
+#X obj -159 107 *~ 5;
+#X obj -451 96 fiddle~;
+#X obj -451 143 moses 60;
+#X floatatom -451 122 5 0 0 0 - - - 0;
+#X obj -451 163 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj -406 163 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text -230 28 "Bézier Surface¨ \, 2016 Miguel Oliveros ©.;
+#X obj -477 445 metro 160;
+#X obj -320 136 dac~ 1 2 3 4;
+#X obj -452 375 bang;
+#X obj -451 358 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj -318 1 adc~ 1 2 3 4 5;
+#X obj -393 400 bang;
+#X obj -393 367 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj -369 535 osc~ 144000;
+#X obj -477 531 osc~ 144;
+#X connect 0 0 25 0;
+#X connect 2 0 5 0;
+#X connect 3 0 9 0;
+#X connect 3 0 17 0;
+#X connect 5 0 1 0;
+#X connect 8 0 25 0;
+#X connect 9 0 7 0;
+#X connect 10 0 3 0;
+#X connect 10 0 1 0;
+#X connect 11 0 13 0;
+#X connect 12 0 14 0;
+#X connect 12 1 15 0;
+#X connect 13 0 12 0;
+#X connect 14 0 20 0;
+#X connect 15 0 23 0;
+#X connect 17 0 8 0;
+#X connect 19 0 17 0;
+#X connect 20 0 19 0;
+#X connect 21 0 10 0;
+#X connect 21 0 11 0;
+#X connect 21 0 18 0;
+#X connect 21 0 18 1;
+#X connect 21 1 18 1;
+#X connect 21 1 18 0;
+#X connect 21 2 18 2;
+#X connect 21 3 18 3;
+#X connect 22 0 9 0;
+#X connect 23 0 22 0;
